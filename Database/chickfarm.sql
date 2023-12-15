@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 01:23 PM
+-- Generation Time: Dec 15, 2023 at 11:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -24,103 +24,135 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun_user`
+-- Table structure for table `akunuser`
 --
 
-CREATE TABLE `akun_user` (
-  `id_user` int(11) NOT NULL,
-  `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+CREATE TABLE `akunuser` (
+  `idUser` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `akunuser`
+--
+
+INSERT INTO `akunuser` (`idUser`, `email`, `username`, `password`) VALUES
+(1, 'fajar@gmail.com', 'fajar', 'user123'),
+(2, 'syahrin@gmail.com', 'syahrin', 'user123'),
+(3, 'luna@gmail.com', 'luna', 'user123'),
+(4, 'afika@gmail.com', 'afika', 'user123'),
+(5, 'ayu@gmail.com', 'ayu', 'user123'),
+(6, 'iqram@gmail.com', 'iqram', 'user123');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Table structure for table `pesanann`
 --
 
-CREATE TABLE `pesanan` (
-  `id_pesanan` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `alamat_pengiriman` varchar(255) NOT NULL,
-  `metode_pembayaran` enum('COD (Cash On Delevery)','Transfer BANK') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+CREATE TABLE `pesanann` (
+  `idPesanan` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `namaPenerima` varchar(255) NOT NULL,
+  `idProduk` int(11) NOT NULL,
+  `namaProduk` varchar(255) NOT NULL,
+  `alamatPengiriman` varchar(255) NOT NULL,
+  `metodePembayaran` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pesanann`
+--
+
+INSERT INTO `pesanann` (`idPesanan`, `idUser`, `namaPenerima`, `idProduk`, `namaProduk`, `alamatPengiriman`, `metodePembayaran`) VALUES
+(1, 2, 'syahrin', 1, 'Vitamin Ayam', 'Makassar', 'COD'),
+(5, 1, 'fajar', 1, 'Vitamin ayam', 'Antang', 'COD');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `produk` (
-  `id_produk` int(11) NOT NULL,
-  `nama_produk` varchar(45) DEFAULT NULL,
-  `gambar_produk` blob DEFAULT NULL,
-  `stok_produk` int(11) DEFAULT NULL,
-  `harga_produk` bigint(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
+CREATE TABLE `product` (
+  `idProduk` int(11) NOT NULL,
+  `namaProduk` varchar(255) NOT NULL,
+  `gambarProduk` varchar(255) NOT NULL,
+  `deskripsiProduk` varchar(255) NOT NULL,
+  `stokProduk` int(11) NOT NULL,
+  `hargaProduk` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Table structure for table `profile`
+-- Dumping data for table `product`
 --
 
-CREATE TABLE `profile` (
-  `id_user` int(11) NOT NULL,
-  `nama_user` varchar(45) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `no_telepon` char(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+INSERT INTO `product` (`idProduk`, `namaProduk`, `gambarProduk`, `deskripsiProduk`, `stokProduk`, `hargaProduk`) VALUES
+(1, 'Pakan Ayam Hi Pro Vite', 'https://storage.googleapis.com/chickfarm/pakan%20popan%20ayam%20511%20Repack%201kg.jpg', 'Pur Ayam 511 Voer Pakan Ayam Hi Pro Vite 511 Charoen Pokphand Kandungan nutrisi lebih bagus daripada bravo 511 Voer / pur pakan komplit butiran ayam / unggas yang mempunyai kandungan nutrisi yang komplit.Tanpa antibiotik pemacu pertumbuhan, sehingga aman ', 3, 12000),
+(2, 'Cipromas 250 gram Obat Ayam', 'https://storage.cloud.google.com/chickfarm/Cipromas%20Obat%20Ayam%20Snot%20Salmonelosis.jpg', 'ARTUPIC adalah Distributor tangan pertama resmi PT. Mensana Aneka Satwa Obat KANDUNGAN per Kg = Ciprofloxacine 100 g', 5, 68000),
+(3, 'Tetelo plus obat anti tetelo', 'https://storage.googleapis.com/chickfarm/TETELO%20PLUS%2010%20CAPS%20OBAT%20ANTI%20TETELO%20NDV%20UNTUK%20AYAM.png', 'Ciri-ciri tetelo : Gangguan syaraf sayap terkulai, pilek, ngorok, Sayap terkulai, jalan di seret, kepala berputar-putar dan ndeprok100', 5, 10000),
+(4, 'DURACOX HC 100 gram - Obat Koksi', 'https://storage.googleapis.com/chickfarm/Obat%20Koksidiosis%20Unggas%20Duracox%20HC%20-%20100%20gr%20-%20Ayam.jpg', 'DURACOX HC 100gram adalah kombinasi dua bahan aktif yang bekerja secara sinergis dan memberikan efek potensiasi untuk penanganan Coccidiosis dan malaria pada unggas yang disebabkan oleh Protozoa', 5, 24000),
+(5, 'Pakan Ayam Petelur De Heus 10 kg Pur Telor', 'https://storage.googleapis.com/chickfarm/Pakan%20Ayam%20Petelur%20LAYER%20CP%2051.png', 'De Heus Petelur D4 Pakan Komplit Ayam Petelur (10 kg) Pakan dengan formulasi khusus sesuai dengan kebutuhan asam amino ayam petelur Pakan komplit fase produksi Pemakaian umur 17 - 50 minggu', 5, 90000);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `akun_user`
+-- Indexes for table `akunuser`
 --
-ALTER TABLE `akun_user`
-  ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `username` (`username`);
+ALTER TABLE `akunuser`
+  ADD PRIMARY KEY (`idUser`),
+  ADD UNIQUE KEY `idUser` (`idUser`,`username`);
 
 --
--- Indexes for table `pesanan`
+-- Indexes for table `pesanann`
 --
-ALTER TABLE `pesanan`
-  ADD PRIMARY KEY (`id_pesanan`),
-  ADD KEY `fk1` (`id_produk`),
-  ADD KEY `fk2` (`id_user`);
+ALTER TABLE `pesanann`
+  ADD PRIMARY KEY (`idPesanan`),
+  ADD KEY `idUser` (`idUser`),
+  ADD KEY `idProduk` (`idProduk`);
 
 --
--- Indexes for table `produk`
+-- Indexes for table `product`
 --
-ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`);
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`idProduk`);
 
 --
--- Indexes for table `profile`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `profile`
-  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for table `akunuser`
+--
+ALTER TABLE `akunuser`
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `pesanann`
+--
+ALTER TABLE `pesanann`
+  MODIFY `idPesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `idProduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `pesanan`
+-- Constraints for table `pesanann`
 --
-ALTER TABLE `pesanan`
-  ADD CONSTRAINT `fk1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`),
-  ADD CONSTRAINT `fk2` FOREIGN KEY (`id_user`) REFERENCES `akun_user` (`id_user`);
-
---
--- Constraints for table `profile`
---
-ALTER TABLE `profile`
-  ADD CONSTRAINT `fk3` FOREIGN KEY (`id_user`) REFERENCES `akun_user` (`id_user`);
+ALTER TABLE `pesanann`
+  ADD CONSTRAINT `pesanann_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `akunuser` (`idUser`),
+  ADD CONSTRAINT `pesanann_ibfk_2` FOREIGN KEY (`idProduk`) REFERENCES `product` (`idProduk`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
