@@ -9,21 +9,21 @@ Here I am in charge of handling the server side of a software. I am responsible 
 
 I am responsible for developing and maintaining application code, including code to handle business logic, code to access databases, and code to present data to users.
 <br>
-<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/971e3534-1996-4098-8fbd-fdb13f9a85ff" width="40%" height=auto alt="Foto-Img Baru">
+<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/971e3534-1996-4098-8fbd-fdb13f9a85ff" width="30%" height=auto alt="Foto-Img Baru">
 <br>
 
 ## Designing the application architecture
 
 responsible for designing the application architecture, including determining what components are needed, how they interact with each other, and how the application will be accessed by users.
 <br>
-<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/5fe1e14e-e811-4716-a59a-888c9405851d" width="40%" height=auto alt="Foto-Img Baru">
+<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/5fe1e14e-e811-4716-a59a-888c9405851d" width="20%" height=auto alt="Foto-Img Baru">
 <br>
 
 ## Developing APIs
 
 I am responsible for creating APIs, which are interfaces that allow other applications or systems to communicate with the application. I am responsible for developing APIs that allow the application to be accessed by users.
 <br>
-<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/3c8d42b4-b4e5-4ca8-b812-3f101373a82f" width="40%" height=auto alt="Foto-Img Baru">
+<img src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/3c8d42b4-b4e5-4ca8-b812-3f101373a82f" width="30%" height=auto alt="Foto-Img Baru">
 <br>
 
 ## Providing computing resources
