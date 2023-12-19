@@ -1,4 +1,6 @@
-<img align="center" src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/694158ef-a3f2-4d55-bac8-296736fe9bb1" width="500px">
+<div align="center">
+  <img align="center" src="https://github.com/ChickenFarming/Cloud-Computing/assets/109706704/694158ef-a3f2-4d55-bac8-296736fe9bb1" width="200px">
+</div>
 <h1 align="center">Cloud Computing</h1>
 
 Here I am in charge of handling the server side of a software. I am responsible for designing, developing, and maintaining the code that runs the application and my duties also in Cloud Computing provide computing resources, such as storage, processing, and networking, over the internet.
